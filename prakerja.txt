@@ -1,1 +1,2 @@
 ini file satu
+saya dari developer A
