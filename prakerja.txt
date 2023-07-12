@@ -1,4 +1,0 @@
-ini file satu
-saya dari developer A
-ini dari clone folder atau developer b
-featureA
