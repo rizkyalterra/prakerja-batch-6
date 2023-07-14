@@ -12,10 +12,12 @@ import (
 func InitRoute(e *echo.Echo) *echo.Echo{
 	e.Use(middleware.Logger())
 	e.POST("/login", controllers.LoginController)
-	e.Use(echojwt.JWT([]byte(os.Getenv("KEY_ENCRYPTOPN"))))
-	e.GET("/users", controllers.UserController)
-	e.GET("/users/:id", controllers.DetailUserController)
-	e.POST("/users", controllers.CreateUserController)
+	
+	authGroup := e.Group("")
+	authGroup.Use(echojwt.JWT([]byte(os.Getenv("KEY_ENCRYPTOPN"))))
+	authGroup.GET("/users", controllers.UserController)
+	authGroup.GET("/users/:id", controllers.DetailUserController)
+	authGroup.POST("/users", controllers.CreateUserController)
 	
 	return e
 }

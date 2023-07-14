@@ -13,7 +13,7 @@ import (
 var DB *gorm.DB
 
 func ConnectDatabase(){
-	loadEnv()
+	// loadEnv()
 	dsn := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=utf8mb4&parseTime=True&loc=Local",
 		os.Getenv("DATABASE_USER"),
 		os.Getenv("DATABASE_PASSWORD"),
