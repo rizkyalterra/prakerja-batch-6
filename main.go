@@ -22,5 +22,5 @@ func getPort() string {
 		port = "8000" // Default port if not specified
 	}
 
-	return ":"+fmt.Sprintf(":%s", port)
+	return fmt.Sprintf(":%s", port)
 }
