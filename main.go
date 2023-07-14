@@ -10,6 +10,7 @@ import (
 )
 
 var DB *gorm.DB
+// feature B
 
 type User struct { 
 	Id int `json:"id"` 
